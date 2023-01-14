@@ -1,0 +1,94 @@
+{
+  "warteg": [
+    {
+      "wartegId": 1,
+      "name": "Warteg Berkah - Jati",
+      "address": "Jl. Tenggiri No.46, RT.9/RW.6, Jati, Kec. Pulo Gadung, Kota Jakarta Timur, Daerah Khusus Ibukota Jakarta 13220",
+      "latitude": -6.197724210408504,
+      "longitude": 106.89195671534424,
+      "rating": 4.7,
+      "review": 1406
+    },
+    {
+      "wartegId": 2,
+      "name": "Warteg 84 Rawamangun",
+      "address": "Jl. Tenggiri No.84, RT.9/RW.6, Jati, Kec. Pulo Gadung, Kota Jakarta Timur, Daerah Khusus Ibukota Jakarta 13220",
+      "latitude": -6.197366991342407,
+      "longitude": 106.89166721313599,
+      "rating": 4.6,
+      "review": 635
+    },
+    {
+      "wartegId": 3,
+      "name": "Warteg Sederhana - Jati",
+      "address": "Jl. Tenggiri No.2a, RT.14/RW.3, Jati, Kec. Pulo Gadung, Kota Jakarta Timur, Daerah Khusus Ibukota Jakarta 13220",
+      "latitude": -6.197470471272448,
+      "longitude": 106.89175988420091,
+      "rating": 4.4,
+      "review": 1390
+    },
+    {
+      "wartegId": 4,
+      "name": "Warteg Kharisma Bahari - Jati",
+      "address": "Jl. Layur No.2-34, RT.18/RW.6, Jati, Kec. Pulo Gadung, Kota Jakarta Timur, Daerah Khusus Ibukota Jakarta 13220",
+      "latitude": -6.19999116461308,
+      "longitude": 106.89757299951843,
+      "rating": 4.2,
+      "review": 58
+    },
+    {
+      "wartegId": 5,
+      "name": "Warteg 21 - Kayu Putih",
+      "address": "Jl. Tanah Mas Raya No.39, RT.3/RW.1, Kayu Putih, Kec. Pulo Gadung, Kota Jakarta Timur, Daerah Khusus Ibukota Jakarta 13210",
+      "latitude": -6.184150163675766,
+      "longitude": 106.88768953047149,
+      "rating": 4.8,
+      "review": 113
+    },
+    {
+      "wartegId": 6,
+      "name": "Warteg Putra Bahari - Rawa Terate",
+      "address": "Jl. Raya Bekasi No.5, RT.15/RW.1, Ujung Menteng, Kec. Cakung, Kota Jakarta Timur, Daerah Khusus Ibukota Jakarta 13960",
+      "latitude": -6.187346074957657,
+      "longitude": 106.96177884932581,
+      "rating": 4.6,
+      "review": 146
+    },
+    {
+      "wartegId": 7,
+      "name": "Warteg Pesona Bahari - Jati",
+      "address": "Jl. Layur, RT.8/RW.11, Jati, Kec. Pulo Gadung, Kota Jakarta Timur, Daerah Khusus Ibukota Jakarta 13220",
+      "latitude": -6.198794029307817,
+      "longitude": 106.89777828525796,
+      "rating": 4.9,
+      "review": 307
+    },
+    {
+      "wartegId": 8,
+      "name": "Warteg 88 Ibu Lina - Jati",
+      "address": "Jl. Tenggiri No.88, RT.1/RW.8, Jati, Kec. Pulo Gadung, Kota Jakarta Timur, Daerah Khusus Ibukota Jakarta 13210",
+      "latitude": -6.196636747328066,
+      "longitude": 106.8918562,
+      "rating": 4.8,
+      "review": 501
+    },
+    {
+      "wartegId": 9,
+      "name": "Warteg Sadewa - Rawamangun",
+      "address": "Jl. H. Ten Raya No.22, RT.1/RW.1, Rawamangun, Kec. Pulo Gadung, Kota Jakarta Timur, Daerah Khusus Ibukota Jakarta 13220",
+      "latitude": -6.188674467239279,
+      "longitude": 106.87626817617844,
+      "rating": 4.8,
+      "review": 374
+    },
+    {
+      "wartegId": 10,
+      "name": "Warteg 88 - Rawamangun",
+      "address": "Jl. Tenggiri No.88, RT.1/RW.8, Jati, Kec. Pulo Gadung, Kota Jakarta Timur, Daerah Khusus Ibukota Jakarta 13210",
+      "latitude": -6.196551418117166,
+      "longitude": 106.89177036931524,
+      "rating": 4.5,
+      "review": 925
+    }
+  ]
+}

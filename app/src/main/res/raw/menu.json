@@ -1,0 +1,304 @@
+{
+  "menu": [
+    {
+      "menuId": 1,
+      "name": "Ayam Goreng",
+      "price": 15000
+    },
+    {
+      "menuId": 1,
+      "name": "Lele Goreng",
+      "price": 13000
+    },
+    {
+      "menuId": 1,
+      "name": "Tumis Jamur",
+      "price": 6000
+    },
+    {
+      "menuId": 1,
+      "name": "Tumis Kacang Toge",
+      "price": 6000
+    },
+    {
+      "menuId": 1,
+      "name": "Nasi",
+      "price": 6500
+    },
+    {
+      "menuId": 1,
+      "name": "Telor Dadar",
+      "price": 6500
+    },
+    {
+      "menuId": 2,
+      "name": "Ayam Goreng",
+      "price": 15000
+    },
+    {
+      "menuId": 2,
+      "name": "Lele Goreng",
+      "price": 12500
+    },
+    {
+      "menuId": 2,
+      "name": "Tumis Jamur",
+      "price": 6000
+    },
+    {
+      "menuId": 2,
+      "name": "Tumis Kacang Toge",
+      "price": 6000
+    },
+    {
+      "menuId": 2,
+      "name": "Nasi",
+      "price": 7000
+    },
+    {
+      "menuId": 2,
+      "name": "Telor Dadar",
+      "price": 7000
+    },
+    {
+      "menuId": 3,
+      "name": "Ayam Goreng",
+      "price": 15000
+    },
+    {
+      "menuId": 3,
+      "name": "Lele Goreng",
+      "price": 12500
+    },
+    {
+      "menuId": 3,
+      "name": "Tumis Jamur",
+      "price": 6000
+    },
+    {
+      "menuId": 3,
+      "name": "Tumis Kacang Toge",
+      "price": 5500
+    },
+    {
+      "menuId": 3,
+      "name": "Nasi",
+      "price": 7000
+    },
+    {
+      "menuId": 3,
+      "name": "Telor Dadar",
+      "price": 7000
+    },
+    {
+      "menuId": 4,
+      "name": "Ayam Goreng",
+      "price": 12000
+    },
+    {
+      "menuId": 4,
+      "name": "Lele Goreng",
+      "price": 10000
+    },
+    {
+      "menuId": 4,
+      "name": "Tumis Jamur",
+      "price": 6000
+    },
+    {
+      "menuId": 4,
+      "name": "Tumis Kacang Toge",
+      "price": 5000
+    },
+    {
+      "menuId": 4,
+      "name": "Nasi",
+      "price": 6000
+    },
+    {
+      "menuId": 4,
+      "name": "Telor Dadar",
+      "price": 8000
+    },
+    {
+      "menuId": 5,
+      "name": "Ayam Goreng",
+      "price": 15000
+    },
+    {
+      "menuId": 5,
+      "name": "Lele Goreng",
+      "price": 12000
+    },
+    {
+      "menuId": 5,
+      "name": "Tumis Jamur",
+      "price": 7000
+    },
+    {
+      "menuId": 5,
+      "name": "Tumis Kacang Toge",
+      "price": 5000
+    },
+    {
+      "menuId": 5,
+      "name": "Nasi",
+      "price": 5000
+    },
+    {
+      "menuId": 5,
+      "name": "Telor Dadar",
+      "price": 8000
+    },
+    {
+      "menuId": 6,
+      "name": "Ayam Goreng",
+      "price": 13000
+    },
+    {
+      "menuId": 6,
+      "name": "Lele Goreng",
+      "price": 12000
+    },
+    {
+      "menuId": 6,
+      "name": "Tumis Jamur",
+      "price": 6000
+    },
+    {
+      "menuId": 6,
+      "name": "Tumis Kacang Toge",
+      "price": 5000
+    },
+    {
+      "menuId": 6,
+      "name": "Nasi",
+      "price": 6500
+    },
+    {
+      "menuId": 6,
+      "name": "Telor Dadar",
+      "price": 6000
+    },
+    {
+      "menuId": 7,
+      "name": "Ayam Goreng",
+      "price": 10000
+    },
+    {
+      "menuId": 7,
+      "name": "Lele Goreng",
+      "price": 8000
+    },
+    {
+      "menuId": 7,
+      "name": "Tumis Jamur",
+      "price": 5000
+    },
+    {
+      "menuId": 7,
+      "name": "Tumis Kacang Toge",
+      "price": 5000
+    },
+    {
+      "menuId": 7,
+      "name": "Nasi",
+      "price": 6000
+    },
+    {
+      "menuId": 7,
+      "name": "Telor Dadar",
+      "price": 5000
+    },
+    {
+      "menuId": 8,
+      "name": "Ayam Goreng",
+      "price": 15000
+    },
+    {
+      "menuId": 8,
+      "name": "Lele Goreng",
+      "price": 13000
+    },
+    {
+      "menuId": 8,
+      "name": "Tumis Jamur",
+      "price": 6000
+    },
+    {
+      "menuId": 8,
+      "name": "Tumis Kacang Toge",
+      "price": 6000
+    },
+    {
+      "menuId": 8,
+      "name": "Nasi",
+      "price": 6000
+    },
+    {
+      "menuId": 8,
+      "name": "Telor Dadar",
+      "price": 6500
+    },
+    {
+      "menuId": 9,
+      "name": "Ayam Goreng",
+      "price": 15000
+    },
+    {
+      "menuId": 9,
+      "name": "Lele Goreng",
+      "price": 12000
+    },
+    {
+      "menuId": 9,
+      "name": "Tumis Jamur",
+      "price": 7000
+    },
+    {
+      "menuId": 9,
+      "name": "Tumis Kacang Toge",
+      "price": 5000
+    },
+    {
+      "menuId": 9,
+      "name": "Nasi",
+      "price": 5000
+    },
+    {
+      "menuId": 9,
+      "name": "Telor Dadar",
+      "price": 8000
+    },
+    {
+      "menuId": 10,
+      "name": "Ayam Goreng",
+      "price": 14500
+    },
+    {
+      "menuId": 10,
+      "name": "Lele Goreng",
+      "price": 12000
+    },
+    {
+      "menuId": 10,
+      "name": "Tumis Jamur",
+      "price": 5500
+    },
+    {
+      "menuId": 10,
+      "name": "Tumis Kacang Toge",
+      "price": 5500
+    },
+    {
+      "menuId": 10,
+      "name": "Nasi",
+      "price": 6000
+    },
+    {
+      "menuId": 10,
+      "name": "Telor Dadar",
+      "price": 6000
+    }
+  ]
+}
