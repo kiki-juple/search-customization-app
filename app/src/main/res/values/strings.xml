@@ -6,4 +6,7 @@
     <string name="title_jarak_terdekat">Warteg Jarak Terdekat</string>
     <string name="title_rating_tinggi">Warteg Rating Tinggi</string>
     <string name="title_harga_murah">Warteg Harga Termurah</string>
+    <string name="distance">%1$.1fkm</string>
+    <string name="review">%s ulasan</string>
+    <string name="bullet">•</string>
 </resources>

@@ -5,6 +5,7 @@ import android.view.ViewGroup
 import androidx.recyclerview.widget.DiffUtil
 import androidx.recyclerview.widget.ListAdapter
 import androidx.recyclerview.widget.RecyclerView
+import com.kiki.searchcustomization.R
 import com.kiki.searchcustomization.data.entity.WartegWithMenu
 import com.kiki.searchcustomization.databinding.CardWartegBinding
 
@@ -14,6 +15,16 @@ class WartegAdapter(val onClick: (WartegWithMenu) -> Unit) :
     inner class WartegViewHolder(private val binding: CardWartegBinding) :
         RecyclerView.ViewHolder(binding.root) {
         fun bind(warteg: WartegWithMenu) {
+            binding.tvLocation.text = itemView.resources.getString(
+                R.string.distance,
+                warteg.warteg.distance
+            )
+            binding.tvRating.text = warteg.warteg.rating.toString()
+            binding.tvUlasan.text =
+                itemView.resources.getString(
+                    R.string.review,
+                    warteg.warteg.review.toString()
+                )
             binding.tvWarteg.text = warteg.warteg.name
             itemView.setOnClickListener { onClick(warteg) }
         }

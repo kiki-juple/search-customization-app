@@ -20,10 +20,18 @@ interface WartegDao {
     fun getWarteg(): Flow<List<WartegWithMenu>>
 
     @Transaction
-    @Query("SELECT * FROM warteg WHERE rating >= 4.8")
+    @Query("SELECT * FROM warteg WHERE wartegId = :id")
+    fun getWartegById(id: Int): Flow<List<WartegWithMenu>>
+
+    @Query("UPDATE warteg SET distance = :distance WHERE wartegId = :id")
+    fun updateWartegDistance(id: Int, distance: Double)
+
+    @Transaction
+    @Query("SELECT * FROM warteg WHERE rating >= 4.5 ORDER BY rating DESC")
     fun getTopWarteg(): Flow<List<WartegWithMenu>>
 
     @Transaction
-    @Query("SELECT * FROM warteg LEFT JOIN menu ON wartegId = menuId WHERE menu.name LIKE '%' || :query || '%' ORDER BY price")
-    fun getCheapestWarteg(query: String): Flow<List<WartegWithMenu>>
+    @RewriteQueriesToDropUnusedColumns
+    @Query("SELECT wartegId, warteg.name, address, latitude, longitude, distance, rating, review, SUM(price) as total_price FROM warteg INNER JOIN menu ON wartegId = menuId GROUP BY wartegId ORDER BY total_price")
+    fun getCheapestWarteg(): Flow<List<WartegWithMenu>>
 }

@@ -18,8 +18,8 @@ class WartegRepository @Inject constructor(
 
     fun getAllWarteg(): Flow<Resource<List<WartegWithMenu>>> = channelFlow {
         send(Resource.Loading())
-        dao.getWarteg().collectLatest {
-            send(Resource.Success(it))
+        dao.getWarteg().collectLatest { list ->
+            send(Resource.Success(list.sortedBy { it.warteg.distance }))
         }
     }.flowOn(ioDispatcher)
 
@@ -30,11 +30,10 @@ class WartegRepository @Inject constructor(
         }
     }.flowOn(ioDispatcher)
 
-    fun getCheapestWarteg(query: String): Flow<Resource<List<WartegWithMenu>>> = channelFlow {
+    fun getCheapestWarteg(): Flow<Resource<List<WartegWithMenu>>> = channelFlow {
         send(Resource.Loading())
-        dao.getCheapestWarteg(query).collectLatest {
+        dao.getCheapestWarteg().collectLatest {
             send(Resource.Success(it))
         }
     }
-
 }

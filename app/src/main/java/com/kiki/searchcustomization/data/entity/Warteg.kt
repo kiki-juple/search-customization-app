@@ -14,6 +14,7 @@ data class Warteg(
     val address: String,
     val latitude: Double,
     val longitude: Double,
+    val distance: Double? = null,
     val rating: Double,
     val review: Int
 )

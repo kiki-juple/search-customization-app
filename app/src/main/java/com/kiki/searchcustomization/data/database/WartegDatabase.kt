@@ -53,13 +53,13 @@ abstract class WartegDatabase : RoomDatabase() {
                         val item = jsonArray.getJSONObject(i)
                         dao.get().insertWarteg(
                             Warteg(
-                                item.getInt("wartegId"),
-                                item.getString("name"),
-                                item.getString("address"),
-                                item.getDouble("latitude"),
-                                item.getDouble("longitude"),
-                                item.getDouble("rating"),
-                                item.getInt("review")
+                                wartegId = item.getInt("wartegId"),
+                                name = item.getString("name"),
+                                address = item.getString("address"),
+                                latitude = item.getDouble("latitude"),
+                                longitude = item.getDouble("longitude"),
+                                rating = item.getDouble("rating"),
+                                review = item.getInt("review")
                             )
                         )
                     }
