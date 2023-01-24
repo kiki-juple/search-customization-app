@@ -46,14 +46,14 @@ class WartegAdapter(val onClick: (WartegWithMenu) -> Unit) :
         val COMPARATOR = object : DiffUtil.ItemCallback<WartegWithMenu>() {
             override fun areItemsTheSame(
                 oldItem: WartegWithMenu,
-                newItem: WartegWithMenu
+                newItem: WartegWithMenu,
             ): Boolean {
                 return oldItem.warteg.wartegId == newItem.warteg.wartegId
             }
 
             override fun areContentsTheSame(
                 oldItem: WartegWithMenu,
-                newItem: WartegWithMenu
+                newItem: WartegWithMenu,
             ): Boolean {
                 return oldItem == newItem
             }

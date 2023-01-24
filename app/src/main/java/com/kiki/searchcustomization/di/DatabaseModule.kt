@@ -4,6 +4,7 @@ import android.content.Context
 import androidx.room.Room
 import com.kiki.searchcustomization.data.dao.WartegDao
 import com.kiki.searchcustomization.data.database.WartegDatabase
+import com.kiki.searchcustomization.util.algorithm.MultiFactorEvaluator
 import dagger.Module
 import dagger.Provides
 import dagger.hilt.InstallIn
@@ -19,7 +20,7 @@ object DatabaseModule {
     @Singleton
     fun provideDatabase(
         @ApplicationContext context: Context,
-        callback: WartegDatabase.PrepopulateCallback
+        callback: WartegDatabase.PrepopulateCallback,
     ): WartegDatabase {
         return Room.databaseBuilder(
             context,
@@ -33,4 +34,7 @@ object DatabaseModule {
 
     @Provides
     fun provideDao(database: WartegDatabase): WartegDao = database.dao()
+
+    @Provides
+    fun provideMultiFactorEvaluator(): MultiFactorEvaluator = MultiFactorEvaluator()
 }

@@ -1,17 +1,20 @@
 package com.kiki.searchcustomization.ui.home
 
+import android.content.Intent
 import android.os.Bundle
 import android.util.Log
 import android.widget.Toast
 import androidx.activity.viewModels
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.view.isVisible
+import androidx.fragment.app.FragmentTransaction
 import androidx.lifecycle.Lifecycle
 import androidx.lifecycle.lifecycleScope
 import androidx.lifecycle.repeatOnLifecycle
-import androidx.recyclerview.widget.PagerSnapHelper
+import androidx.recyclerview.widget.LinearSnapHelper
 import com.kiki.searchcustomization.data.Resource
 import com.kiki.searchcustomization.databinding.ActivityHomeBinding
+import com.kiki.searchcustomization.ui.search.SearchActivity
 import dagger.hilt.android.AndroidEntryPoint
 import kotlinx.coroutines.flow.collectLatest
 import kotlinx.coroutines.launch
@@ -28,9 +31,25 @@ class HomeActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(binding.root)
+        setUpAction()
         cardWartegDistance()
         cardWartegRating()
         cardWartegPrice()
+    }
+
+    private fun setUpAction() {
+        binding.apply {
+            searchBar.setOnClickListener {
+                startActivity(Intent(this@HomeActivity, SearchActivity::class.java))
+            }
+            btnFilter.setOnClickListener {
+                val transaction = supportFragmentManager.beginTransaction()
+                transaction.setTransition(FragmentTransaction.TRANSIT_FRAGMENT_OPEN)
+                transaction.add(android.R.id.content, FilterDialogFragment())
+                    .addToBackStack(null)
+                    .commit()
+            }
+        }
     }
 
     private fun cardWartegRating() {
@@ -38,7 +57,7 @@ class HomeActivity : AppCompatActivity() {
             Toast.makeText(this, it.warteg.name, Toast.LENGTH_SHORT).show()
         }
         binding.rvWartegRating.adapter = adapter
-        val snapHelper = PagerSnapHelper()
+        val snapHelper = LinearSnapHelper()
         snapHelper.attachToRecyclerView(binding.rvWartegRating)
         lifecycleScope.launch {
             repeatOnLifecycle(Lifecycle.State.STARTED) {
@@ -61,7 +80,7 @@ class HomeActivity : AppCompatActivity() {
             Toast.makeText(this, it.warteg.name, Toast.LENGTH_SHORT).show()
         }
         binding.rvWartegTerdekat.adapter = adapterWithDistance
-        val snapHelper = PagerSnapHelper()
+        val snapHelper = LinearSnapHelper()
         snapHelper.attachToRecyclerView(binding.rvWartegTerdekat)
         lifecycleScope.launch {
             repeatOnLifecycle(Lifecycle.State.STARTED) {
@@ -84,7 +103,7 @@ class HomeActivity : AppCompatActivity() {
             Toast.makeText(this, it.warteg.name, Toast.LENGTH_SHORT).show()
         }
         binding.rvWartegHarga.adapter = adapterPrice
-        val snapHelper = PagerSnapHelper()
+        val snapHelper = LinearSnapHelper()
         snapHelper.attachToRecyclerView(binding.rvWartegHarga)
         lifecycleScope.launch {
             repeatOnLifecycle(Lifecycle.State.STARTED) {

@@ -14,7 +14,7 @@ import javax.inject.Inject
 class SplashRepository @Inject constructor(
     private val dao: WartegDao,
     private val dataStoreManager: DataStoreManager,
-    @IoDispatcher private val ioDispatcher: CoroutineDispatcher
+    @IoDispatcher private val ioDispatcher: CoroutineDispatcher,
 ) {
 
     suspend fun saveLatLng(latLng: LatLng) = withContext(ioDispatcher) {

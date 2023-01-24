@@ -12,5 +12,5 @@ data class Menu(
     val id: Int? = null,
     val menuId: Int,
     val name: String,
-    val price: Double
+    val price: Double,
 )

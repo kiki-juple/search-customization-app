@@ -35,7 +35,7 @@ abstract class WartegDatabase : RoomDatabase() {
     class PrepopulateCallback @Inject constructor(
         private val scope: CoroutineScope,
         @ApplicationContext private val context: Context,
-        private val dao: Provider<WartegDao>
+        private val dao: Provider<WartegDao>,
     ) : Callback() {
         override fun onCreate(db: SupportSQLiteDatabase) {
             super.onCreate(db)

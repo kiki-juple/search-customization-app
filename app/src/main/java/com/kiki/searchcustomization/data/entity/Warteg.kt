@@ -16,5 +16,5 @@ data class Warteg(
     val longitude: Double,
     val distance: Double? = null,
     val rating: Double,
-    val review: Int
+    val review: Int,
 )

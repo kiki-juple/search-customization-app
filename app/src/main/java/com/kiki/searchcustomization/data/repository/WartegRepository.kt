@@ -13,7 +13,7 @@ import javax.inject.Inject
 
 class WartegRepository @Inject constructor(
     private val dao: WartegDao,
-    @IoDispatcher private val ioDispatcher: CoroutineDispatcher
+    @IoDispatcher private val ioDispatcher: CoroutineDispatcher,
 ) {
 
     fun getAllWarteg(): Flow<Resource<List<WartegWithMenu>>> = channelFlow {

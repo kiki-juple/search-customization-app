@@ -14,7 +14,7 @@ import javax.inject.Inject
 
 @HiltViewModel
 class HomeViewModel @Inject constructor(
-    private val repository: WartegRepository
+    private val repository: WartegRepository,
 ) : ViewModel() {
 
     private val _topWarteg = MutableStateFlow<Resource<List<WartegWithMenu>>>(Resource.Loading())
