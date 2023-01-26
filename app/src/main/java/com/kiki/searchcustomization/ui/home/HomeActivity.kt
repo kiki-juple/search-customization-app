@@ -7,7 +7,6 @@ import android.widget.Toast
 import androidx.activity.viewModels
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.view.isVisible
-import androidx.fragment.app.FragmentTransaction
 import androidx.lifecycle.Lifecycle
 import androidx.lifecycle.lifecycleScope
 import androidx.lifecycle.repeatOnLifecycle
@@ -41,13 +40,7 @@ class HomeActivity : AppCompatActivity() {
         binding.apply {
             searchBar.setOnClickListener {
                 startActivity(Intent(this@HomeActivity, SearchActivity::class.java))
-            }
-            btnFilter.setOnClickListener {
-                val transaction = supportFragmentManager.beginTransaction()
-                transaction.setTransition(FragmentTransaction.TRANSIT_FRAGMENT_OPEN)
-                transaction.add(android.R.id.content, FilterDialogFragment())
-                    .addToBackStack(null)
-                    .commit()
+                overridePendingTransition(0, 0)
             }
         }
     }
