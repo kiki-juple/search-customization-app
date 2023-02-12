@@ -41,6 +41,6 @@ interface WartegDao {
 
     @Transaction
     @RewriteQueriesToDropUnusedColumns
-    @Query("SELECT * FROM warteg INNER JOIN menu ON wartegId = menuId WHERE menu.name LIKE '%' || :query || '%' GROUP BY wartegId ORDER BY price")
+    @Query("SELECT * FROM menu WHERE menu.name LIKE '%' || :query || '%'")
     fun searchWarteg(query: String): Flow<List<SearchModel>>
 }

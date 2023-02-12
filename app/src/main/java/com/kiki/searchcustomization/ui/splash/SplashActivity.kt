@@ -5,13 +5,12 @@ import android.annotation.SuppressLint
 import android.content.Intent
 import android.content.pm.PackageManager
 import android.os.Bundle
-import android.os.Handler
-import android.os.Looper
 import android.widget.Toast
 import androidx.activity.result.contract.ActivityResultContracts
 import androidx.activity.viewModels
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.app.ActivityCompat
+import androidx.lifecycle.lifecycleScope
 import com.google.android.gms.location.LocationServices
 import com.google.android.gms.location.Priority
 import com.google.android.gms.maps.model.LatLng
@@ -19,6 +18,8 @@ import com.google.android.gms.tasks.CancellationTokenSource
 import com.kiki.searchcustomization.databinding.ActivitySplashBinding
 import com.kiki.searchcustomization.ui.home.HomeActivity
 import dagger.hilt.android.AndroidEntryPoint
+import kotlinx.coroutines.delay
+import kotlinx.coroutines.launch
 
 @AndroidEntryPoint
 @SuppressLint("CustomSplashScreen")
@@ -56,13 +57,13 @@ class SplashActivity : AppCompatActivity() {
             .addOnSuccessListener { location ->
                 val latLng = LatLng(location.latitude, location.longitude)
                 viewModel.saveLatLng(latLng)
-                viewModel.updateWartegDistance()
-                val intent = Intent(this, HomeActivity::class.java)
-                Handler(Looper.getMainLooper()).postDelayed({
-                    startActivity(intent)
+                lifecycleScope.launch {
+                    viewModel.updateWartegDistance()
+                    delay(2000)
+                    startActivity(Intent(this@SplashActivity, HomeActivity::class.java))
                     overridePendingTransition(0, 0)
                     finish()
-                }, 2000)
+                }
             }
     }
 
@@ -81,11 +82,4 @@ class SplashActivity : AppCompatActivity() {
             }
         }
     }
-
-//    private fun checkPermission(permission: String): Boolean {
-//        return ContextCompat.checkSelfPermission(
-//            this,
-//            permission
-//        ) == PackageManager.PERMISSION_GRANTED
-//    }
 }

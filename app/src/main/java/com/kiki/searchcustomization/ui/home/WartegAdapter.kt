@@ -23,7 +23,7 @@ class WartegAdapter(val onClick: (WartegWithMenu) -> Unit) :
             binding.tvUlasan.text =
                 itemView.resources.getString(
                     R.string.review,
-                    warteg.warteg.review.toString()
+                    warteg.warteg.review
                 )
             binding.tvWarteg.text = warteg.warteg.name
             itemView.setOnClickListener { onClick(warteg) }

@@ -1,0 +1,213 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".ui.filter.FilterActivity">
+
+    <com.google.android.material.appbar.AppBarLayout
+        android:id="@+id/appBarLayout"
+        android:layout_width="0dp"
+        android:layout_height="?actionBarSize"
+        android:backgroundTint="@color/white"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <com.google.android.material.appbar.MaterialToolbar
+            android:id="@+id/toolbar"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            app:navigationIcon="@drawable/ic_baseline_close_24"
+            app:title="@string/filter_pencarian">
+
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/btn_terapkan"
+                style="@style/Widget.Material3.Button.TextButton"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:layout_gravity="end"
+                android:text="@string/terapkan" />
+
+        </com.google.android.material.appbar.MaterialToolbar>
+    </com.google.android.material.appbar.AppBarLayout>
+
+    <com.google.android.material.textview.MaterialTextView
+        android:id="@+id/filter_harga"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="24dp"
+        android:layout_marginTop="32dp"
+        android:text="@string/filter_berdasarkan_harga"
+        android:textSize="18sp"
+        app:layout_constraintEnd_toStartOf="@+id/switch_harga"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/appBarLayout" />
+
+    <com.google.android.material.materialswitch.MaterialSwitch
+        android:id="@+id/switch_harga"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="24dp"
+        android:background="@null"
+        app:layout_constraintBottom_toBottomOf="@+id/filter_harga"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/filter_harga"
+        app:thumbTint="@color/color_primary"
+        app:trackDecorationTint="@color/color_primary_variant"
+        app:trackTint="@color/color_primary_variant" />
+
+    <com.google.android.material.textview.MaterialTextView
+        android:id="@+id/filter_harga_desc"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:text="@string/aktifkan_filter_berdasarkan_harga_untuk_menghitung_skor_harga_dalalm_pencarian"
+        android:textSize="12sp"
+        app:layout_constraintEnd_toEndOf="@+id/filter_harga"
+        app:layout_constraintStart_toStartOf="@+id/filter_harga"
+        app:layout_constraintTop_toBottomOf="@+id/filter_harga" />
+
+    <com.google.android.material.divider.MaterialDivider
+        android:id="@+id/divider_harga"
+        android:layout_width="0dp"
+        android:layout_height="0.75dp"
+        android:layout_marginHorizontal="24dp"
+        android:layout_marginTop="16dp"
+        app:dividerColor="@color/gray"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/filter_harga_desc" />
+
+    <com.google.android.material.textview.MaterialTextView
+        android:id="@+id/filter_distance"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="24dp"
+        android:layout_marginTop="24dp"
+        android:text="@string/filter_berdasarkan_jarak"
+        android:textSize="18sp"
+        app:layout_constraintEnd_toStartOf="@+id/switch_distance"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/divider_harga" />
+
+    <com.google.android.material.materialswitch.MaterialSwitch
+        android:id="@+id/switch_distance"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="24dp"
+        android:background="@null"
+        app:layout_constraintBottom_toBottomOf="@+id/filter_distance"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/filter_distance"
+        app:thumbTint="@color/color_primary"
+        app:trackDecorationTint="@color/color_primary_variant"
+        app:trackTint="@color/color_primary_variant" />
+
+    <com.google.android.material.textview.MaterialTextView
+        android:id="@+id/filter_distance_desc"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:text="@string/aktifkan_filter_berdasarkan_harga_untuk_menghitung_skor_jarak_dalalm_pencarian"
+        android:textSize="12sp"
+        app:layout_constraintEnd_toEndOf="@+id/filter_distance"
+        app:layout_constraintStart_toStartOf="@+id/filter_distance"
+        app:layout_constraintTop_toBottomOf="@+id/filter_distance" />
+
+    <com.google.android.material.divider.MaterialDivider
+        android:id="@+id/divider_jarak"
+        android:layout_width="0dp"
+        android:layout_height="0.75dp"
+        android:layout_marginHorizontal="24dp"
+        android:layout_marginTop="16dp"
+        app:dividerColor="@color/gray"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/filter_distance_desc" />
+
+    <com.google.android.material.textview.MaterialTextView
+        android:id="@+id/filter_rating"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="24dp"
+        android:layout_marginTop="24dp"
+        android:text="@string/filter_berdasarkan_rating"
+        android:textSize="18sp"
+        app:layout_constraintEnd_toStartOf="@+id/switch_rating"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/divider_jarak" />
+
+    <com.google.android.material.materialswitch.MaterialSwitch
+        android:id="@+id/switch_rating"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="24dp"
+        android:background="@null"
+        app:layout_constraintBottom_toBottomOf="@+id/filter_rating"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/filter_rating"
+        app:thumbTint="@color/color_primary"
+        app:trackDecorationTint="@color/color_primary_variant"
+        app:trackTint="@color/color_primary_variant" />
+
+    <com.google.android.material.textview.MaterialTextView
+        android:id="@+id/filter_rating_desc"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:text="@string/aktifkan_filter_berdasarkan_harga_untuk_menghitung_skor_rating_dalalm_pencarian"
+        android:textSize="12sp"
+        app:layout_constraintEnd_toEndOf="@+id/filter_rating"
+        app:layout_constraintStart_toStartOf="@+id/filter_rating"
+        app:layout_constraintTop_toBottomOf="@+id/filter_rating" />
+
+    <com.google.android.material.divider.MaterialDivider
+        android:id="@+id/divider_rating"
+        android:layout_width="0dp"
+        android:layout_height="0.75dp"
+        android:layout_marginHorizontal="24dp"
+        android:layout_marginTop="16dp"
+        app:dividerColor="@color/gray"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/filter_rating_desc" />
+
+    <com.google.android.material.textview.MaterialTextView
+        android:id="@+id/filter_review"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="24dp"
+        android:layout_marginTop="24dp"
+        android:text="@string/filter_berdasarkan_review"
+        android:textSize="18sp"
+        app:layout_constraintEnd_toStartOf="@+id/switch_review"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/divider_rating" />
+
+    <com.google.android.material.materialswitch.MaterialSwitch
+        android:id="@+id/switch_review"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="24dp"
+        android:background="@null"
+        app:layout_constraintBottom_toBottomOf="@+id/filter_review"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/filter_review"
+        app:thumbTint="@color/color_primary"
+        app:trackDecorationTint="@color/color_primary_variant"
+        app:trackTint="@color/color_primary_variant" />
+
+    <com.google.android.material.textview.MaterialTextView
+        android:id="@+id/filter_review_desc"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:text="@string/aktifkan_filter_berdasarkan_harga_untuk_menghitung_skor_review_dalalm_pencarian"
+        android:textSize="12sp"
+        app:layout_constraintEnd_toEndOf="@+id/filter_review"
+        app:layout_constraintStart_toStartOf="@+id/filter_review"
+        app:layout_constraintTop_toBottomOf="@+id/filter_review" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

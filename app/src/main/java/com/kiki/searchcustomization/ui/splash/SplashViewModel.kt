@@ -15,9 +15,5 @@ class SplashViewModel @Inject constructor(private val repository: SplashReposito
         repository.saveLatLng(latLng)
     }
 
-    fun updateWartegDistance() {
-        viewModelScope.launch {
-            repository.updateWartegDistance()
-        }
-    }
+    fun updateWartegDistance() = viewModelScope.launch { repository.updateWartegDistance() }
 }

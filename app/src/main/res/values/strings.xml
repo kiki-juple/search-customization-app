@@ -7,6 +7,19 @@
     <string name="title_rating_tinggi">Warteg Rating Tinggi</string>
     <string name="title_harga_murah">Warteg Harga Termurah</string>
     <string name="distance">%1$.1fkm</string>
-    <string name="review">%s ulasan</string>
+    <string name="review">%d ulasan</string>
     <string name="bullet">•</string>
+    <string name="filter_pencarian">Filter Pencarian</string>
+    <string name="terapkan">Terapkan</string>
+    <string name="jarak">Jarak</string>
+    <string name="rating">Rating</string>
+    <string name="harga">Harga</string>
+    <string name="filter_berdasarkan_harga">Filter berdasarkan harga</string>
+    <string name="aktifkan_filter_berdasarkan_harga_untuk_menghitung_skor_harga_dalalm_pencarian">Aktifkan filter berdasarkan harga untuk menghitung skor harga dalalm pencarian.</string>
+    <string name="filter_berdasarkan_jarak">Filter berdasarkan jarak</string>
+    <string name="aktifkan_filter_berdasarkan_harga_untuk_menghitung_skor_jarak_dalalm_pencarian">Aktifkan filter berdasarkan harga untuk menghitung skor jarak dalalm pencarian.</string>
+    <string name="filter_berdasarkan_rating">Filter berdasarkan rating</string>
+    <string name="aktifkan_filter_berdasarkan_harga_untuk_menghitung_skor_rating_dalalm_pencarian">Aktifkan filter berdasarkan harga untuk menghitung skor rating dalalm pencarian.</string>
+    <string name="filter_berdasarkan_review">Filter berdasarkan review</string>
+    <string name="aktifkan_filter_berdasarkan_harga_untuk_menghitung_skor_review_dalalm_pencarian">Aktifkan filter berdasarkan harga untuk menghitung skor review dalalm pencarian.</string>
 </resources>

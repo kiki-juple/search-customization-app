@@ -1,5 +1,6 @@
 package com.kiki.searchcustomization.util.algorithm
 
+import android.util.Log
 import com.kiki.searchcustomization.data.entity.SearchModel
 
 class MultiFactorEvaluator {
@@ -13,8 +14,13 @@ class MultiFactorEvaluator {
 
     fun evaluate(item: SearchModel): Score {
         var totalScore = 0.0
-        for (factor in factors) {
-            val score = factor.evaluate(item) * weight[factor.name]!!
+        factors.forEach { factor ->
+            val score = if (factor is PriceEvaluationFactor) {
+                factor.evaluate(item) * weight[factor.name]!!
+            } else {
+                factor.evaluate(item) * weight[factor.name]!!
+            }
+            Log.d("score123", mapOf("${item.warteg.name} ${factor.name}" to score).toString())
             totalScore += score
         }
         return Score(item, totalScore)

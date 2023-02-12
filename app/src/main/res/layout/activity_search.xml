@@ -10,6 +10,7 @@
         android:id="@+id/search_layout"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
+        android:background="@color/white"
         android:orientation="horizontal"
         android:paddingVertical="16dp"
         app:layout_constraintEnd_toEndOf="parent"
@@ -41,10 +42,10 @@
                 android:layout_height="match_parent"
                 android:hint="@string/search_hint_home"
                 android:imeOptions="actionSearch"
-                android:textAppearance="@style/TextAppearance.Material3.DisplaySmall"
                 android:inputType="text"
                 android:lines="1"
                 android:paddingVertical="8dp"
+                android:textAppearance="@style/TextAppearance.Material3.DisplaySmall"
                 android:textColorHint="@android:color/tab_indicator_text"
                 android:textSize="14sp" />
 
@@ -68,4 +69,58 @@
 
     </LinearLayout>
 
+    <com.google.android.material.divider.MaterialDivider
+        android:id="@+id/materialDivider"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        app:dividerColor="@color/gray"
+        app:dividerThickness="0.5dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/search_layout" />
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/rv_search"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:clipToPadding="false"
+        android:orientation="vertical"
+        android:paddingHorizontal="16dp"
+        android:paddingTop="16dp"
+        app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/search_layout"
+        tools:listitem="@layout/item_search" />
+
+    <com.google.android.material.textview.MaterialTextView
+        android:id="@+id/tv_error"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:visibility="gone"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/search_layout" />
+
+    <LinearLayout
+        android:id="@+id/loading"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:background="@color/white"
+        android:gravity="center"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/search_layout">
+
+        <com.airbnb.lottie.LottieAnimationView
+            android:layout_width="150dp"
+            android:layout_height="150dp"
+            app:lottie_autoPlay="true"
+            app:lottie_loop="true"
+            app:lottie_rawRes="@raw/loading" />
+
+    </LinearLayout>
 </androidx.constraintlayout.widget.ConstraintLayout>

@@ -48,10 +48,10 @@
                 <TextView
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:textAppearance="@style/TextAppearance.Material3.DisplaySmall"
-                    android:textSize="14sp"
                     android:text="@string/search_hint_home"
-                    android:textColor="@android:color/tab_indicator_text" />
+                    android:textAppearance="@style/TextAppearance.Material3.DisplaySmall"
+                    android:textColor="@android:color/tab_indicator_text"
+                    android:textSize="14sp" />
             </LinearLayout>
         </com.google.android.material.card.MaterialCardView>
 
@@ -207,7 +207,7 @@
             android:layout_height="200dp"
             app:lottie_autoPlay="true"
             app:lottie_loop="true"
-            app:lottie_rawRes="@raw/food" />
+            app:lottie_rawRes="@raw/loading" />
 
     </LinearLayout>
 </androidx.constraintlayout.widget.ConstraintLayout>

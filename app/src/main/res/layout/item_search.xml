@@ -1,0 +1,141 @@
+<?xml version="1.0" encoding="utf-8"?>
+<com.google.android.material.card.MaterialCardView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    style="@style/Widget.Material3.CardView.Elevated"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_marginBottom="16dp">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <ImageView
+            android:id="@+id/imageView"
+            android:layout_width="100dp"
+            android:layout_height="0dp"
+            android:scaleType="centerCrop"
+            android:src="@drawable/food"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            tools:ignore="ContentDescription" />
+
+        <TextView
+            android:id="@+id/tv_menu"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:ellipsize="end"
+            android:maxLines="2"
+            android:paddingHorizontal="8dp"
+            android:textSize="18sp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@+id/imageView"
+            app:layout_constraintTop_toTopOf="parent"
+            tools:text="dsada dasdasdsa dsadsa dsadsadsa dsads dsadsa dsadsa dasdsaa dss fsdfds fsd" />
+
+        <TextView
+            android:id="@+id/tv_warteg"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:paddingHorizontal="8dp"
+            android:textSize="12sp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@+id/imageView"
+            app:layout_constraintTop_toBottomOf="@+id/tv_price"
+            tools:text="Warteg Pesona Bahari Jati" />
+
+        <TextView
+            android:id="@+id/tv_price"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:paddingHorizontal="8dp"
+            android:textSize="24sp"
+            android:textStyle="bold"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@+id/imageView"
+            app:layout_constraintTop_toBottomOf="@+id/tv_menu"
+            tools:text="Rp10.000" />
+
+        <ImageView
+            android:id="@+id/imageView2"
+            android:layout_width="16dp"
+            android:layout_height="16dp"
+            android:layout_marginStart="8dp"
+            android:layout_marginTop="2dp"
+            android:layout_marginBottom="8dp"
+            android:src="@drawable/ic_baseline_star_24"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toEndOf="@+id/imageView"
+            app:layout_constraintTop_toBottomOf="@+id/tv_warteg"
+            app:tint="@color/color_primary"
+            tools:ignore="ContentDescription" />
+
+        <com.google.android.material.textview.MaterialTextView
+            android:id="@+id/tv_rating"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="2dp"
+            android:textColor="@color/color_primary"
+            android:textSize="12sp"
+            app:layout_constraintBottom_toBottomOf="@+id/imageView2"
+            app:layout_constraintStart_toEndOf="@+id/imageView2"
+            app:layout_constraintTop_toTopOf="@+id/imageView2"
+            tools:text="4.9" />
+
+        <com.google.android.material.textview.MaterialTextView
+            android:id="@+id/materialTextView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="8dp"
+            android:paddingHorizontal="8dp"
+            android:text="@string/bullet"
+            android:textSize="12sp"
+            app:layout_constraintBottom_toBottomOf="@+id/tv_rating"
+            app:layout_constraintStart_toEndOf="@+id/tv_rating"
+            app:layout_constraintTop_toTopOf="@+id/tv_rating" />
+
+        <com.google.android.material.textview.MaterialTextView
+            android:id="@+id/tv_ulasan"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="8dp"
+            android:textColor="@color/color_primary"
+            android:textSize="12sp"
+            app:layout_constraintBottom_toBottomOf="@+id/materialTextView"
+            app:layout_constraintStart_toEndOf="@+id/materialTextView"
+            app:layout_constraintTop_toTopOf="@+id/materialTextView"
+            tools:text="46 ulasan" />
+
+        <com.google.android.material.textview.MaterialTextView
+            android:id="@+id/materialTextView1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="8dp"
+            android:paddingHorizontal="8dp"
+            android:text="@string/bullet"
+            android:textSize="12sp"
+            app:layout_constraintBottom_toBottomOf="@+id/tv_ulasan"
+            app:layout_constraintStart_toEndOf="@+id/tv_ulasan"
+            app:layout_constraintTop_toTopOf="@+id/tv_ulasan" />
+
+        <com.google.android.material.textview.MaterialTextView
+            android:id="@+id/tv_jarak"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="8dp"
+            android:textColor="@color/color_primary"
+            android:textSize="12sp"
+            app:layout_constraintBottom_toBottomOf="@+id/materialTextView1"
+            app:layout_constraintStart_toEndOf="@+id/materialTextView1"
+            app:layout_constraintTop_toTopOf="@+id/materialTextView1"
+            app:layout_constraintVertical_bias="0.0"
+            tools:text="2.3km" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</com.google.android.material.card.MaterialCardView>

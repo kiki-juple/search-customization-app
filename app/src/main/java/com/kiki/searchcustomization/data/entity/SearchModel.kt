@@ -4,10 +4,10 @@ import androidx.room.Embedded
 import androidx.room.Relation
 
 data class SearchModel(
-    @Embedded val warteg: Warteg,
     @Relation(
-        parentColumn = "wartegId",
-        entityColumn = "menuId"
+        parentColumn = "menuId",
+        entityColumn = "wartegId"
     )
-    val menu: Menu,
+    val warteg: Warteg,
+    @Embedded val menu: Menu
 )
