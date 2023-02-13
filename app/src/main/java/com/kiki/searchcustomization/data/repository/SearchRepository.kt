@@ -1,6 +1,5 @@
 package com.kiki.searchcustomization.data.repository
 
-import android.util.Log
 import com.kiki.searchcustomization.data.dao.WartegDao
 import com.kiki.searchcustomization.data.entity.Factor
 import com.kiki.searchcustomization.data.entity.SearchModel
@@ -32,18 +31,14 @@ class SearchRepository @Inject constructor(
             val reviews = list.map {
                 it.warteg.review.toDouble()
             }
-            Log.d(
-                "weight",
-                "${factors.distance}, ${factors.price}, ${factors.rating}, ${factors.review}"
-            )
-            evaluator.apply {
-                addFactor(DistanceEvaluationFactor(distances), if (factors.distance) 1.0 else 0.0)
-                addFactor(PriceEvaluationFactor(prices), if (factors.price) 1.0 else 0.0)
-                addFactor(RatingEvaluationFactor(ratings), if (factors.rating) 1.0 else 0.0)
-                addFactor(ReviewEvaluationFactor(reviews), if (factors.review) 1.0 else 0.0)
-            }
+            val factor = mutableListOf<EvaluationFactor>()
+            if (factors.distance) factor.add(DistanceEvaluationFactor(distances))
+            if (factors.price) factor.add(PriceEvaluationFactor(prices))
+            if (factors.rating) factor.add(RatingEvaluationFactor(ratings))
+            if (factors.review) factor.add(ReviewEvaluationFactor(reviews))
+            val weight = 1.0 / factor.size
             val score = list.map { warteg ->
-                evaluator.evaluate(warteg)
+                evaluator.evaluate(warteg, factor, weight)
             }.sortedByDescending { it.score }
             val result = score.map {
                 it.toSearchModel()
