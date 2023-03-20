@@ -3,18 +3,22 @@ package com.kiki.searchcustomization.ui.splash
 import android.Manifest
 import android.annotation.SuppressLint
 import android.content.Intent
+import android.content.IntentSender
 import android.content.pm.PackageManager
 import android.os.Bundle
 import android.widget.Toast
+import androidx.activity.result.IntentSenderRequest
 import androidx.activity.result.contract.ActivityResultContracts
 import androidx.activity.viewModels
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.app.ActivityCompat
 import androidx.lifecycle.lifecycleScope
-import com.google.android.gms.location.LocationServices
-import com.google.android.gms.location.Priority
+import com.google.android.gms.common.api.ResolvableApiException
+import com.google.android.gms.location.*
 import com.google.android.gms.maps.model.LatLng
 import com.google.android.gms.tasks.CancellationTokenSource
+import com.google.android.material.dialog.MaterialAlertDialogBuilder
+import com.google.android.material.snackbar.Snackbar
 import com.kiki.searchcustomization.databinding.ActivitySplashBinding
 import com.kiki.searchcustomization.ui.home.HomeActivity
 import dagger.hilt.android.AndroidEntryPoint
@@ -29,6 +33,16 @@ class SplashActivity : AppCompatActivity() {
     private val viewModel by viewModels<SplashViewModel>()
     private val fusedLocation by lazy { LocationServices.getFusedLocationProviderClient(this) }
 
+    private val launcher = registerForActivityResult(
+        ActivityResultContracts.StartIntentSenderForResult()
+    ) {
+        if (it.resultCode == RESULT_OK) {
+            requestLocation()
+        } else {
+            getMyLastLocation()
+        }
+    }
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(binding.root)
@@ -36,6 +50,44 @@ class SplashActivity : AppCompatActivity() {
     }
 
     private fun getMyLastLocation() {
+        val locationRequest = LocationRequest.Builder(100)
+            .setPriority(Priority.PRIORITY_HIGH_ACCURACY)
+            .build()
+
+        val locationSettings = LocationSettingsRequest.Builder()
+            .addLocationRequest(locationRequest)
+            .build()
+        LocationServices.getSettingsClient(this)
+            .checkLocationSettings(locationSettings)
+            .addOnSuccessListener { requestLocation() }
+            .addOnFailureListener {
+                if ((it as ResolvableApiException).statusCode == LocationSettingsStatusCodes.RESOLUTION_REQUIRED) {
+                    MaterialAlertDialogBuilder(this)
+                        .setTitle("Aktifkan Lokasi")
+                        .setMessage("Aplikasi memerlukan lokasi saat ini untuk menghitung jarak warteg.")
+                        .setPositiveButton("Aktifkan") { _, _ ->
+                            try {
+                                launcher.launch(
+                                    IntentSenderRequest.Builder(it.resolution).build()
+                                )
+//                                it.startResolutionForResult(this, 61124)
+                            } catch (e: IntentSender.SendIntentException) {
+                                it.localizedMessage?.let { message ->
+                                    Snackbar.make(binding.root, message, Snackbar.LENGTH_LONG)
+                                        .show()
+                                }
+                            }
+                        }
+                        .show()
+                } else {
+                    it.localizedMessage?.let { message ->
+                        Snackbar.make(binding.root, message, Snackbar.LENGTH_LONG).show()
+                    }
+                }
+            }
+    }
+
+    private fun requestLocation() {
         if (ActivityCompat.checkSelfPermission(
                 this,
                 Manifest.permission.ACCESS_FINE_LOCATION
@@ -45,7 +97,7 @@ class SplashActivity : AppCompatActivity() {
                 Manifest.permission.ACCESS_COARSE_LOCATION
             ) != PackageManager.PERMISSION_GRANTED
         ) {
-            locationPermissionRequest.launch(
+            permissionRequest.launch(
                 arrayOf(
                     Manifest.permission.ACCESS_FINE_LOCATION,
                     Manifest.permission.ACCESS_COARSE_LOCATION
@@ -59,7 +111,7 @@ class SplashActivity : AppCompatActivity() {
                 viewModel.saveLatLng(latLng)
                 lifecycleScope.launch {
                     viewModel.updateWartegDistance()
-                    delay(4000)
+                    delay(3500)
                     startActivity(Intent(this@SplashActivity, HomeActivity::class.java))
                     overridePendingTransition(0, 0)
                     finish()
@@ -67,7 +119,7 @@ class SplashActivity : AppCompatActivity() {
             }
     }
 
-    private val locationPermissionRequest = registerForActivityResult(
+    private val permissionRequest = registerForActivityResult(
         ActivityResultContracts.RequestMultiplePermissions()
     ) { permission ->
         when {
