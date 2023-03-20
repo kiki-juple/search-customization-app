@@ -10,6 +10,7 @@ import androidx.core.widget.addTextChangedListener
 import androidx.lifecycle.Lifecycle
 import androidx.lifecycle.lifecycleScope
 import androidx.lifecycle.repeatOnLifecycle
+import com.kiki.searchcustomization.R
 import com.kiki.searchcustomization.data.Resource
 import com.kiki.searchcustomization.databinding.ActivitySearchBinding
 import com.kiki.searchcustomization.ui.filter.FilterActivity
@@ -42,11 +43,19 @@ class SearchActivity : AppCompatActivity() {
                 viewModel.searchResult.collectLatest { resource ->
                     when (resource) {
                         is Resource.Loading -> {
+                            binding.tvCount.isVisible = false
                             binding.loading.isVisible = true
                             binding.tvError.isVisible = false
                             binding.rvSearch.isVisible = false
                         }
                         is Resource.Success -> {
+                            if (resource.data?.size!! > 0) {
+                                binding.tvCount.isVisible = true
+                                binding.tvCount.text = getString(
+                                    R.string.hasil_pencarian,
+                                    resource.data.size
+                                )
+                            }
                             adapter.submitList(resource.data) {
                                 binding.tvError.isVisible = false
                                 binding.rvSearch.isVisible = true
@@ -55,6 +64,7 @@ class SearchActivity : AppCompatActivity() {
                             binding.loading.isVisible = false
                         }
                         is Resource.Error -> {
+                            binding.tvCount.isVisible = false
                             binding.tvError.isVisible = true
                             binding.rvSearch.isVisible = false
                             binding.loading.isVisible = false

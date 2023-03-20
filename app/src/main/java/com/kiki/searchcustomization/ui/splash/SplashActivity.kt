@@ -59,7 +59,7 @@ class SplashActivity : AppCompatActivity() {
                 viewModel.saveLatLng(latLng)
                 lifecycleScope.launch {
                     viewModel.updateWartegDistance()
-                    delay(2000)
+                    delay(4000)
                     startActivity(Intent(this@SplashActivity, HomeActivity::class.java))
                     overridePendingTransition(0, 0)
                     finish()

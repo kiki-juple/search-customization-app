@@ -22,4 +22,5 @@
     <string name="aktifkan_filter_berdasarkan_harga_untuk_menghitung_skor_rating_dalalm_pencarian">Aktifkan filter berdasarkan harga untuk menghitung skor rating dalalm pencarian.</string>
     <string name="filter_berdasarkan_review">Filter berdasarkan review</string>
     <string name="aktifkan_filter_berdasarkan_harga_untuk_menghitung_skor_review_dalalm_pencarian">Aktifkan filter berdasarkan harga untuk menghitung skor review dalalm pencarian.</string>
+    <string name="hasil_pencarian">Menampilkan %d hasil</string>
 </resources>
